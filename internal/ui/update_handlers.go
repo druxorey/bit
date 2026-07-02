@@ -1,3 +1,6 @@
+// ABOUTME: Keyboard event handlers for the TUI application.
+// ABOUTME: Handles export mode, text input, font selection, and all panel interactions.
+
 package ui
 
 import (
@@ -104,16 +107,25 @@ func (m *model) handleOverwritePromptKeys(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 	case "enter":
 		if m.export.selectedButton == 0 {
 			// Yes - proceed with overwrite
-			m.performExport(m.export.overwriteContent, m.export.overwriteFilename, m.export.overwriteFormat)
+			// Check if this is binary content (PNG) or text content
+			if len(m.export.overwriteBinaryContent) > 0 {
+				m.performBinaryExport(m.export.overwriteBinaryContent, m.export.overwriteFilename, m.export.overwriteFormat)
+			} else {
+				m.performExport(m.export.overwriteContent, m.export.overwriteFilename, m.export.overwriteFormat)
+			}
 		}
-		// Close overwrite prompt and export mode
+		// Close overwrite prompt and export mode, clear overwrite data
 		m.export.showOverwritePrompt = false
 		m.export.active = false
 		m.export.filenameInput.Blur()
+		m.export.overwriteBinaryContent = nil // Clear binary content
+		m.export.overwriteContent = ""        // Clear text content
 		return m, nil
 	case "esc":
-		// Cancel overwrite
+		// Cancel overwrite, clear overwrite data
 		m.export.showOverwritePrompt = false
+		m.export.overwriteBinaryContent = nil // Clear binary content
+		m.export.overwriteContent = ""        // Clear text content
 		return m, nil
 	}
 	return m, nil
@@ -162,6 +174,10 @@ func (m *model) handleTextPanelUpdate(msg tea.KeyMsg) (tea.Model, tea.Cmd) {
 		if m.textInput.mode == TextEntryMode && m.textInput.input.Focused() {
 			if msg.String() == "up" || msg.String() == "down" {
 				m.handleMultiRowNavigation(msg.String())
+			} else {
+				// Let k/j be typed as characters when in entry mode
+				m.textInput.input, cmd = m.textInput.input.Update(msg)
+				return m, cmd
 			}
 		} else if m.textInput.mode == TextKerningMode && m.textInput.input.Focused() {
 			if isUpKey(msg.String()) {
@@ -683,3 +699,5 @@ func (m *model) handlePanelNavigation(direction int) (tea.Model, tea.Cmd) {
 
 	return m, cmd
 }
+
+

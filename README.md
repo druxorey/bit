@@ -21,7 +21,7 @@
 | **Feature**                             | **Description**                                                                                |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
 | **🌟 100+ Font Styles**               | Classic terminal, retro gaming, modern pixel, decorative, and monospace fonts. All free for commercial and personal use.                  |
-| **📤 Multi-Format Export**              | Export to TXT, Go, JavaScript, Python, Rust, and Bash with language-specific formatting.               |
+| **📤 Multi-Format Export**              | Export to PNG, TXT, Go, JavaScript, Python, Rust, and Bash. PNG exports with transparent background.               |
 | **🎨 Advanced Text Effects**            | Color gradient effects (horizontal & vertical), shadow effects (horizontal & vertical), and text scaling (0.5×–4×).|
 | **🌈 Rich Color Support**               | 14 vibrant predefined UI colors that can be combined with gradients. The library and CLI also accept any hex color for unlimited possibilities.|
 | **📐 Alignment & Spacing**                   | Adjust character, word, line spacing, and per-character manual kerning. Align text left, center, or right.          |
@@ -345,6 +345,7 @@ The interactive UI supports exporting your creations to:
 
 | Format | Extension | Description |
 |--------|-----------|-------------|
+| **PNG** | `.png` | PNG image with transparent background |
 | **TXT** | `.txt` | Plain text with ANSI codes stripped |
 | **Go** | `.go` | Go source code with embedded ANSI strings |
 | **JavaScript** | `.js` | JavaScript array with console.log display function |
@@ -356,6 +357,8 @@ All exports include:
 - Properly escaped ANSI sequences
 - Language-specific string literals
 - Ready-to-run code
+
+PNG exports preserve the exact appearance of your terminal art with transparent backgrounds.
 
 ---
 

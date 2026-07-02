@@ -49,7 +49,7 @@ func (m model) renderControlsView() string {
 	controls := lipgloss.NewStyle().
 		Foreground(lipgloss.Color(ColorGray)).
 		Align(lipgloss.Center).
-		Render("←→: Panels • ↑↓: Adjust • Tab: Modes • Enter: Apply • r: Random • e: Export • Esc: Quit ")
+		Render("←→: Panels • ↑↓: Adjust • Tab: Modes • r: Random • e: Export • Esc: Quit")
 
 	return lipgloss.NewStyle().
 		Width(m.uiState.width).
@@ -277,7 +277,7 @@ func (m model) renderExportView() string {
 
 	instructions := lipgloss.NewStyle().
 		Foreground(lipgloss.Color(ColorFaint)).
-		Render("TAB: Select format, Write filename and press ENTER to export, ESC to cancel")
+		Render("←→: Select format, Write filename and press ENTER to export, ESC to cancel")
 
 	cwd, err := os.Getwd()
 	if err != nil {
@@ -630,3 +630,5 @@ func (m *model) createStyledPadding(length int) string {
 	// In a more complex implementation, we might track the last color used
 	return strings.Repeat(" ", length)
 }
+
+
