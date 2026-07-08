@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/superstarryeyes/bit/ansifonts"
-	"github.com/superstarryeyes/bit/internal/ui"
+	"github.com/paulilaaso/bit/ansifonts"
+	"github.com/paulilaaso/bit/internal/ui"
 )
 
 func main() {
@@ -87,7 +87,7 @@ func main() {
 	if version {
 		fmt.Println("Bit - Terminal ANSI Logo Designer & Font Library")
 		fmt.Println("Version: 0.3.0")
-		fmt.Println("https://github.com/superstarryeyes/bit")
+		fmt.Println("https://github.com/paulilaaso/bit")
 		return
 	}
 

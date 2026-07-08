@@ -23,7 +23,7 @@ To get started with the `ansifonts` library, follow these simple steps:
 
 1.  **Install the library:**
     ```bash
-    go get github.com/superstarryeyes/bit/ansifonts
+    go get github.com/paulilaaso/bit/ansifonts
     ```
 
 2.  **Use it in your Go application:**
@@ -34,7 +34,7 @@ To get started with the `ansifonts` library, follow these simple steps:
         "fmt"
         "log"
 
-        "github.com/superstarryeyes/bit/ansifonts"
+        "github.com/paulilaaso/bit/ansifonts"
     )
 
     func main() {
@@ -61,7 +61,7 @@ To use the `ansifonts` library in your project, ensure you have **Go 1.25+** ins
 You can add the library to your project as a dependency using `go get`:
 
 ```bash
-go get github.com/superstarryeyes/bit/ansifonts
+go get github.com/paulilaaso/bit/ansifonts
 ```
 
 ## Usage
@@ -79,7 +79,7 @@ import (
 	"fmt"
 	"log"
 
-	" github.com/superstarryeyes/bit/ansifonts"
+	" github.com/paulilaaso/bit/ansifonts"
 )
 
 func main() {
@@ -166,7 +166,7 @@ import (
     "fmt"
     "log"
 
-    "github.com/superstarryeyes/bit/ansifonts"
+    "github.com/paulilaaso/bit/ansifonts"
 )
 
 func main() {

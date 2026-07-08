@@ -1,4 +1,4 @@
-module github.com/superstarryeyes/bit
+module github.com/paulilaaso/bit
 
 go 1.25.0
 

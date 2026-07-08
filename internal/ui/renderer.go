@@ -3,7 +3,7 @@ package ui
 import (
 	"fmt"
 
-	"github.com/superstarryeyes/bit/ansifonts"
+	"github.com/paulilaaso/bit/ansifonts"
 )
 
 func (m *model) renderText() {

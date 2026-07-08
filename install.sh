@@ -2,7 +2,7 @@
 set -e
 
 # Bit installer script
-# Usage: curl -sfL https://raw.githubusercontent.com/superstarryeyes/bit/main/install.sh | sh
+# Usage: curl -sfL https://raw.githubusercontent.com/paulilaaso/bit/main/install.sh | sh
 
 # Detect OS and architecture
 OS=$(uname -s | tr '[:upper:]' '[:lower:]')
@@ -38,7 +38,7 @@ case "$ARCH" in
 esac
 
 # Get latest release version
-LATEST_VERSION=$(curl -s https://api.github.com/repos/superstarryeyes/bit/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+LATEST_VERSION=$(curl -s https://api.github.com/repos/paulilaaso/bit/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 
 if [ -z "$LATEST_VERSION" ]; then
     echo "Failed to get latest version"
@@ -49,7 +49,7 @@ echo "Installing Bit $LATEST_VERSION for $OS $ARCH..."
 
 # Construct download URL
 FILENAME="bit_${LATEST_VERSION#v}_${OS}_${ARCH}.tar.gz"
-URL="https://github.com/superstarryeyes/bit/releases/download/$LATEST_VERSION/$FILENAME"
+URL="https://github.com/paulilaaso/bit/releases/download/$LATEST_VERSION/$FILENAME"
 
 # Create temp directory
 TMP_DIR=$(mktemp -d)

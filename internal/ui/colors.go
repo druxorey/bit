@@ -1,7 +1,7 @@
 package ui
 
 import (
-	"github.com/superstarryeyes/bit/ansifonts"
+	"github.com/paulilaaso/bit/ansifonts"
 )
 
 // Centralized color palette for consistent color usage across the application

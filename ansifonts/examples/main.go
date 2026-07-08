@@ -5,7 +5,7 @@ import (
 	"math/rand/v2"
 	"strings"
 
-	"github.com/superstarryeyes/bit/ansifonts"
+	"github.com/paulilaaso/bit/ansifonts"
 )
 
 func main() {

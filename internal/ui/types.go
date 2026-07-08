@@ -5,7 +5,7 @@ package ui
 
 import (
 	"github.com/charmbracelet/bubbles/textinput"
-	"github.com/superstarryeyes/bit/internal/export"
+	"github.com/paulilaaso/bit/internal/export"
 )
 
 // textInputModel handles text entry and alignment
@@ -62,18 +62,18 @@ type shadowModel struct {
 
 // exportModel handles export functionality
 type exportModel struct {
-	active               bool                  // Whether we're in export mode
-	format               string                // Selected export format
-	filenameInput        textinput.Model       // Text input for filename
-	showConfirmation     bool                  // Whether to show export confirmation in header
-	confirmationText     string                // The confirmation text to display
-	showOverwritePrompt  bool                  // Whether to show overwrite confirmation
-	overwriteFilename    string                // Filename that would be overwritten
-	overwriteContent     string                // Content to write if user confirms (text formats)
-	overwriteBinaryContent []byte              // Content to write if user confirms (binary formats like PNG)
-	overwriteFormat      string                // Format for the overwrite
-	selectedButton       int                   // 0 = Yes, 1 = No
-	manager              *export.ExportManager // Export manager for format information
+	active                 bool                  // Whether we're in export mode
+	format                 string                // Selected export format
+	filenameInput          textinput.Model       // Text input for filename
+	showConfirmation       bool                  // Whether to show export confirmation in header
+	confirmationText       string                // The confirmation text to display
+	showOverwritePrompt    bool                  // Whether to show overwrite confirmation
+	overwriteFilename      string                // Filename that would be overwritten
+	overwriteContent       string                // Content to write if user confirms (text formats)
+	overwriteBinaryContent []byte                // Content to write if user confirms (binary formats like PNG)
+	overwriteFormat        string                // Format for the overwrite
+	selectedButton         int                   // 0 = Yes, 1 = No
+	manager                *export.ExportManager // Export manager for format information
 }
 
 // uiStateModel handles general UI state
@@ -115,8 +115,8 @@ type FontData struct {
 
 // Color options for text with proper hex codes
 type ColorOption struct {
-	Name             string
-	Hex              string
+	Name              string
+	Hex               string
 	ExcludeFromRandom bool
 }
 

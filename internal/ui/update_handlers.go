@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	tea "github.com/charmbracelet/bubbletea"
-	"github.com/superstarryeyes/bit/ansifonts"
+	"github.com/paulilaaso/bit/ansifonts"
 )
 
 // handleWindowResize handles terminal window resize events
@@ -699,5 +699,3 @@ func (m *model) handlePanelNavigation(direction int) (tea.Model, tea.Cmd) {
 
 	return m, cmd
 }
-
-

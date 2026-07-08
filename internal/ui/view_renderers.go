@@ -9,7 +9,7 @@ import (
 	"unicode/utf8"
 
 	"github.com/charmbracelet/lipgloss"
-	"github.com/superstarryeyes/bit/internal/export"
+	"github.com/paulilaaso/bit/internal/export"
 )
 
 // ansiRegex is compiled once at package level for efficiency
@@ -630,5 +630,3 @@ func (m *model) createStyledPadding(length int) string {
 	// In a more complex implementation, we might track the last color used
 	return strings.Repeat(" ", length)
 }
-
-

@@ -1,41 +1,37 @@
 <div align="center">
 
-<img src="https://github.com/superstarryeyes/bit/blob/main/images/bit-icon.png?raw=true" alt="Bit Icon" width="35%" />
+<img src="images/bit-icon.png" alt="Bit Icon" width="35%" />
 
 ### Bit - Terminal ANSI Logo Designer & Font Library
-[![License: MIT](https://img.shields.io/badge/License-MIT-05bd7e.svg)](LICENSE)
-[![Terminal](https://img.shields.io/badge/interface-terminal-05bd7e.svg)](https://github.com/superstarryeyes/bit)
-[![Go](https://img.shields.io/badge/Go-1.25+-05bd7e.svg)](https://golang.org)
-[![Discord](https://img.shields.io/badge/Discord-Join%20our%20Community-5865F2?logo=discord&logoColor=white)](https://discord.gg/z8sE2gnMNk)
 
-[Features](#-features) • [Quick Start](#-quick-start) • [Installation](#-installation) • [Usage](#-usage) • [Library](#-library) • [Font Collection](#%EF%B8%8F-font-collection) • [Contributing](#️-contributing) • [License](#-license) • [Acknowledgments](#-acknowledgments)
+<img src="images/bit-screenshot.gif" alt="Bit Screenshot" width="100%" />
 
-<img src="https://github.com/superstarryeyes/bit/blob/main/images/bit-screenshot.gif" alt="Bit Screenshot" width="100%" />
+Bit is a terminal-based ANSI logo designer and bitmap-font utility for creating, previewing, and exporting stylized text directly from your console. It features an interactive multi-panel TUI, a streamlined CLI, and a standalone Go library. Bit renders ANSI text with custom typography, multi-directional gradients, and textured shadows, exporting the results as images or code for popular programming languages.
 
 </div>
 
 ---
 
-## ✨ Features
+## Features
 
 | **Feature**                             | **Description**                                                                                |
 | --------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| **🌟 100+ Font Styles**               | Classic terminal, retro gaming, modern pixel, decorative, and monospace fonts. All free for commercial and personal use.                  |
-| **📤 Multi-Format Export**              | Export to PNG, TXT, Go, JavaScript, Python, Rust, and Bash. PNG exports with transparent background.               |
-| **🎨 Advanced Text Effects**            | Color gradient effects (horizontal & vertical), shadow effects (horizontal & vertical), and text scaling (0.5×–4×).|
-| **🌈 Rich Color Support**               | 14 vibrant predefined UI colors that can be combined with gradients. The library and CLI also accept any hex color for unlimited possibilities.|
-| **📐 Alignment & Spacing**                   | Adjust character, word, line spacing, and per-character manual kerning. Align text left, center, or right.          |
-| **⚡️ Smart Typography**                 | Automatic kerning, descender detection and alignment.           |
-| **🛠️ Powerful CLI Tool**                | Render text quickly with extended options for fonts, colors, spacing, and effects.            |
-| **📚 Standalone Go Library**           | A simple, self-contained API with type-safe enums for effortless programmatic ANSI text rendering.                           |
+| **100+ Font Styles**               | Classic terminal, retro gaming, modern pixel, decorative, and monospace fonts. All free for commercial and personal use.                  |
+| **Multi-Format Export**              | Export to PNG, TXT, Go, JavaScript, Python, Rust, and Bash. PNG exports with transparent background.               |
+| **Advanced Text Effects**            | Color gradient effects (horizontal & vertical), shadow effects (horizontal & vertical), and text scaling (0.5×–4×).|
+| **Rich Color Support**               | 14 vibrant predefined UI colors that can be combined with gradients. The library and CLI also accept any hex color for unlimited possibilities.|
+| **Alignment & Spacing**                   | Adjust character, word, line spacing, and per-character manual kerning. Align text left, center, or right.          |
+| **Smart Typography**                 | Automatic and custom kerning options, descender detection and alignment.           |
+| **Powerful CLI Tool**                | Render text quickly with extended options for fonts, colors, spacing, and effects.            |
+| **Standalone Go Library**           | A simple, self-contained API with type-safe enums for effortless programmatic ANSI text rendering.                           |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/superstarryeyes/bit
+git clone https://github.com/paulilaaso/bit
 cd bit
 
 # 2. Install dependencies
@@ -50,12 +46,12 @@ go build -o bit ./cmd/bit
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### Quick Install (Linux/macOS)
 
 ```bash
-curl -sfL https://raw.githubusercontent.com/superstarryeyes/bit/main/install.sh | sh
+curl -sfL https://raw.githubusercontent.com/paulilaaso/bit/main/install.sh | sh
 ```
 
 This installs `bit` to `/usr/local/bin`. The binary works in two modes:
@@ -64,7 +60,7 @@ This installs `bit` to `/usr/local/bin`. The binary works in two modes:
 
 ### Manual Installation
 
-Download the latest release for your platform from the [Releases page](https://github.com/superstarryeyes/bit/releases).
+Download the latest release for your platform from the [Releases page](https://github.com/paulilaaso/bit/releases).
 
 **Available for:**
 - Linux (x86_64, arm64)
@@ -89,7 +85,7 @@ Expand-Archive bit_*_Windows_x86_64.zip
 
 ```bash
 # Clone repository
-git clone https://github.com/superstarryeyes/bit
+git clone https://github.com/paulilaaso/bit
 cd bit
 
 # Build the binary
@@ -104,7 +100,7 @@ go build -o bit ./cmd/bit
 
 ---
 
-## 💻 Usage
+## Usage
 
 ### Running Bit
 
@@ -262,7 +258,7 @@ bit -font gohufontb -color 93 -align right "Go\nRight"
 
 ---
 
-## 📚 Library
+## Library
 
 Bit includes a **powerful standalone Go library** (`ansifonts`) that's completely independent of the TUI. The library can be imported into any Go project without any TUI dependencies.
 
@@ -273,7 +269,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/superstarryeyes/bit/ansifonts"
+	"github.com/paulilaaso/bit/ansifonts"
 )
 
 func main() {
@@ -317,7 +313,7 @@ func main() {
 
 ---
 
-## 🗂️ Font Collection
+## Font Collection
 
 The project includes **100+ carefully curated bitmap fonts** embedded in the binary.
 
@@ -362,23 +358,7 @@ PNG exports preserve the exact appearance of your terminal art with transparent 
 
 ---
 
-## 🛠️ Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-Join our Discord community for discussions, support and collaboration for creating new Bit fonts.
-
-[![Join our Discord](https://img.shields.io/badge/Discord-Join%20Us-5865F2?logo=discord&style=for-the-badge)](https://discord.gg/z8sE2gnMNk)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License**. See the LICENSE file for details.
-
----
-
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Font Authors**: Thank you to all the original font creators whose work is included.
 - **[Charm](https://charm.land)**: For the excellent TUI framework.
@@ -386,8 +366,6 @@ This project is licensed under the **MIT License**. See the LICENSE file for det
 
 ---
 
-<div align="center">
+## License
 
-**⭐ Star this repo** if you find it useful!
-
-</div>
+This project is licensed under the **MIT License**. See the LICENSE file for details.

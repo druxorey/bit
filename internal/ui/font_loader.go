@@ -3,7 +3,7 @@ package ui
 import (
 	"fmt"
 
-	"github.com/superstarryeyes/bit/ansifonts"
+	"github.com/paulilaaso/bit/ansifonts"
 )
 
 // loadFontList loads only the font metadata without loading the actual font data
@@ -23,7 +23,7 @@ func loadFontList() ([]FontInfo, error) {
 	for _, fontName := range fontNames {
 		fonts = append(fonts, FontInfo{
 			Name:   fontName,
-			Path:   "", // Path not relevant when using unified loader
+			Path:   "",    // Path not relevant when using unified loader
 			Loaded: false, // Font data not loaded yet
 		})
 	}

@@ -11,7 +11,7 @@ import (
 	"github.com/charmbracelet/bubbles/textinput"
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
-	"github.com/superstarryeyes/bit/internal/export"
+	"github.com/paulilaaso/bit/internal/export"
 )
 
 func InitialModel() (model, error) {

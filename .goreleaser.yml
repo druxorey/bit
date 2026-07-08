@@ -49,9 +49,9 @@ changelog:
   use: github
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
-      - '^chore:'
+      - "^docs:"
+      - "^test:"
+      - "^chore:"
       - Merge pull request
       - Merge branch
   groups:
@@ -66,7 +66,7 @@ changelog:
 
 release:
   github:
-    owner: superstarryeyes
+    owner: paulilaaso
     name: bit
   draft: false
   prerelease: auto
@@ -80,7 +80,7 @@ release:
 
     **Linux/macOS**
     ```bash
-    curl -sfL https://raw.githubusercontent.com/superstarryeyes/bit/main/install.sh | sh
+    curl -sfL https://raw.githubusercontent.com/paulilaaso/bit/main/install.sh | sh
     ```
 
     **Manual Download**
@@ -88,17 +88,17 @@ release:
 
   footer: |
     ---
-    
-    **Full Changelog:** https://github.com/superstarryeyes/bit/compare/{{ .PreviousTag }}...{{ .Tag }}
-    
+
+    **Full Changelog:** https://github.com/paulilaaso/bit/compare/{{ .PreviousTag }}...{{ .Tag }}
+
     ### What's Included
-    
+
     Each archive contains:
     - `bit` binary (interactive UI + CLI mode)
     - Documentation and license files
-    
+
     ### Usage
-    
+
     ```bash
     bit              # Start interactive UI
     bit -list        # List all fonts
