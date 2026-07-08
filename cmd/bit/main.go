@@ -86,7 +86,7 @@ func main() {
 	// Show version
 	if version {
 		fmt.Println("Bit - Terminal ANSI Logo Designer & Font Library")
-		fmt.Println("Version: 0.3.0")
+		fmt.Println("Version: 0.4.0")
 		fmt.Println("https://github.com/paulilaaso/bit")
 		return
 	}
