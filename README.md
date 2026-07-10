@@ -219,6 +219,9 @@ bit -font pressstart -color 32 -scale 1 "2X"
 
 # Aligned text
 bit -font gohufontb -color 93 -align right "Go\nRight"
+
+# Inline custom kerning: \+ adds space, \- removes space
+bit "H\+el\+lo W\-orld"
 ```
 
 #### CLI Options

@@ -112,6 +112,20 @@ func main() {
 
 ```
 
+### Inline Kerning Utility
+
+The library includes a `ParseInlineKerning` function that converts strings
+containing inline `\+` (add space) and `\-` (remove space) markers into a clean
+text string and a `RenderOptions.CustomKerning` map. This is the same parser the
+CLI tools use, making it easy to apply per-character kerning adjustments
+programmatically:
+
+```go
+cleanText, kerning := ansifonts.ParseInlineKerning("H\+el\+lo W\-orld")
+options.CustomKerning = kerning
+rendered := ansifonts.RenderTextWithOptions(cleanText, font, options)
+```
+
 ## API Reference
 
 ### Font Management

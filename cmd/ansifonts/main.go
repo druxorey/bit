@@ -60,6 +60,8 @@ func main() {
 		fmt.Fprintf(os.Stderr, "  %s -font pressstart -color 32 -gradient 93 -direction right \"Cool\"\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "  %s -font gohufontb -color 91 -char-spacing 5 \"Spaced\"\n", os.Args[0])
 		fmt.Fprintf(os.Stderr, "  %s -font pixeloperator -color 95 -shadow -shadow-h 2 -shadow-v 1 \"Shadow\"\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "  %s \"H\\+el\\+lo W\\-orld\"\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "  # Inline kerning: \\+ adds space, \\- removes space\n")
 	}
 
 	flag.Parse()
@@ -87,6 +89,9 @@ func main() {
 
 	// Replace literal \n with actual newlines
 	text = strings.ReplaceAll(text, "\\n", "\n")
+
+	// Parse inline kerning markers (\+ and \-) from the text
+	text, customKerning := ansifonts.ParseInlineKerning(text)
 
 	// If no font specified, use the first available font
 	if fontName == "" {
@@ -152,10 +157,11 @@ func main() {
 
 	// Always use RenderTextWithOptions with default values
 	options := ansifonts.RenderOptions{
-		CharSpacing: charSpacing,
-		WordSpacing: wordSpacing,
-		LineSpacing: lineSpacing,
-		ScaleFactor: scale,
+		CharSpacing:   charSpacing,
+		WordSpacing:   wordSpacing,
+		LineSpacing:   lineSpacing,
+		ScaleFactor:   scale,
+		CustomKerning: customKerning,
 	}
 
 	// Set alignment

@@ -69,6 +69,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "  bit -font pressstart -color 32 -shadow \"Shadow\"        # With shadow\n")
 		fmt.Fprintf(os.Stderr, "  bit -load ./myfont.bit \"Custom\"                        # Load custom font file\n")
 		fmt.Fprintf(os.Stderr, "  bit -load ./fonts/ -list                               # Load custom font directory\n")
+		fmt.Fprintf(os.Stderr, "  bit \"H\\+el\\+lo W\\-orld\"                                # Inline kerning: \\+ adds, \\- removes space\n")
 	}
 
 	flag.Parse()
@@ -131,6 +132,9 @@ func main() {
 	// Replace literal \n with actual newlines
 	text = strings.ReplaceAll(text, "\\n", "\n")
 
+	// Parse inline kerning markers (\+ and \-) from the text
+	text, customKerning := ansifonts.ParseInlineKerning(text)
+
 	// If no font specified, use the first available font
 	if fontName == "" {
 		fonts, err := ansifonts.ListFonts()
@@ -192,10 +196,11 @@ func main() {
 
 	// Build render options
 	options := ansifonts.RenderOptions{
-		CharSpacing: charSpacing,
-		WordSpacing: wordSpacing,
-		LineSpacing: lineSpacing,
-		ScaleFactor: scale,
+		CharSpacing:   charSpacing,
+		WordSpacing:   wordSpacing,
+		LineSpacing:   lineSpacing,
+		ScaleFactor:   scale,
+		CustomKerning: customKerning,
 	}
 
 	// Set alignment
